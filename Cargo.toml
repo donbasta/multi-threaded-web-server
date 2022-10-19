@@ -13,5 +13,5 @@ name = "mtws"
 path = "src/main.rs"
 
 [lib]
-name = "lib"
-path = "src/lib/lib.rs"
+name = "threadpool"
+path = "src/lib/threadpool.rs"
