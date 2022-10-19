@@ -1,26 +1,8 @@
+use crate::threadpool::error::PoolCreationError;
 use std::{
-    error::Error,
-    fmt,
     sync::{mpsc, Arc, Mutex},
     thread,
 };
-
-#[derive(Clone, Debug)]
-pub struct PoolCreationError {
-    pub description: String,
-}
-
-impl Error for PoolCreationError {
-    fn description(&self) -> &str {
-        &self.description
-    }
-}
-
-impl fmt::Display for PoolCreationError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}", self.description)
-    }
-}
 
 pub struct ThreadPool {
     workers: Vec<Worker>,
